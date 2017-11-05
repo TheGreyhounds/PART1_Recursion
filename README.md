@@ -15,13 +15,12 @@ public int factorial(int n) throws ArithmeticException{
     }
 ```
 The function factorial takes an integer argument **n**, which the program first checks to see if
-is equal to 1, in which case **n** is simply returned, or if **n** is less than 1, in
-which case an exception is thrown for the invoking method to handle (logically, the only way for
-this last case to occur is for the programmer to invoke factorial() with an n less than 1, however). 
-If neither of these conditions are found to be true, then the factorial function returns **n** 
-multiplied by the return of factorial(n-1).
+is equal to 1, in which case **n** is simply returned, or, if **n** is less than 1, an exception is 
+thrown for the invoking method to handle (logically, the only way for this last case to occur is for 
+the programmer to invoke factorial() with an n less than 1, however). If neither of these conditions 
+are found to be true, then the factorial function returns **n** multiplied by the return of factorial(n-1).
 
-Wait, what? It may seem circular at first, but this is perfectly legal and perhaps a bit elegant, too.
+Wait, what? While it may seem circular at first, this is perfectly legal, and perhaps a bit elegant, too.
 The function factorial() calls itself, using a value of **n** that is numerically one less than the
 value of **n** given to it. When we as the programmer call factorial(n), the function must call itself,
 which then must call itself, which then... until finally one call to factorial() has an n that is equal
